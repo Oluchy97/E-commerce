@@ -38,13 +38,13 @@ if($issubmitted){
 </head>
 <body>
     
-    <form method="post">
-        <input type="text" name="name" id="username" placeholder="name">
+    <form method="post" name="FormReg">
+        <input type="text" name="name" id="name" placeholder="name">
         <input type="text" name="username" id="username" placeholder="username">
         <input type="email" name="email" id="email" placeholder="email">
         <input type="password" name="password" id="password" placeholder="password">
         <button>submit</button>
     </form>
-
+    <script src="js/validate.js"></script>
 </body>
 </html>

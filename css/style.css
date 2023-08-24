@@ -1,3 +1,7 @@
+h1{
+    text-align: center;
+}
+
 form{
     display: block;
     margin: auto;
@@ -5,6 +9,7 @@ form{
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.521);
     border-radius: 10px;
     padding: 10px;
+    text-align: center;
 }
 
 input{
@@ -51,3 +56,4 @@ button{
 .good{
     background-color: green;
 }
+

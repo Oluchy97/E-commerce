@@ -1,86 +1,52 @@
 <?php
-// fghjkjhgfghjxc
+if(isset($_POST["Username"])){
+    $Username = $_POST["Username"];
+    $Password = $_POST["Password"];
 
-// $name = 'oluchy arinze';
-// print("Welcome ".$name." rtyui". "srdtfyhg");
-// $arr = [
-//     'name'=>'oluchy'
-// ];
-// print($arr['name']);
+    $Username = $_POST["Username"];
+    $Password = $_POST["Password"];
 
-// $fruits = [
-//     'mango', 'apple', 'orange'
-// ];
-// print_r($fruits);
+    $conn = new mysqli("localhost", "root","", "login");
+    if($conn->connect_error){
+        exit("Error Connecting to DB");
+    }
 
-// $age = 20;
-// if ($age < 10){
-//     print('way to go');
-// }elseif($age < 18){
-//     print('no way');
-// }else{
-//     print('Perfector');
-// }
-
-// SWITCH STATEMENT ON PHP is used to select on of the many blocks of code to be executed,m 
-
-// $Fav_Fruit = "apple";
-
-// switch ($Fav_Fruit) {
-//     case "orange": 
-//         echo "fav fruit is orange";
-//     break; 
-//     case "banana":
-//         echo 'fave fruit is banana';
-//     break;   
-//     case 'apple':
-//         echo 'fave fruit is apple';
-//     break;
-
-// }
-
-
-// FUNCTIONS
-
-// function add($orange, $apple){
-//     return $orange+$apple;
-// }
-// $res = add(10,15);
-// print($res);
-
-// OBJECT ORIENTED PROGRAMMING
- 
-    // var_dump($_GET);
-
-//     $username ='root';
-//     $password ='';
-//     $database = 'login';
-//     $host = 'localhost';
-
-//     $conn = new mysqli($host, $username, $password, $database);
-//     $conn  ->query("INSERT INTO `user_data`
-//     (`id`, `name`, `username`, `email`, `password`)
-//      VALUES 
-//      (null,'Arinze','Arinzey1','arinze@gmail.com','9876543g2h1jsh')");
-
-//      $conn ->query("INSERT INTO `user_data`
-//      (`id`, `name`, `username`, `email`, `password`) 
-//      VALUES 
-//      (null,'johnbosco','jbnze1','jbnze@gmail.com','081lynda1997')");
+            
+    $Username = $conn->escape_string($Username);
     
-// ?>
+    $query = "SELECT * FROM `user_data` WHERE `username` = '$Username'";
+    $result=mysqli_query($conn,$query);
+    $count=mysqli_num_rows($result);
+    if ($count>0) {
+        echo "Login Successful";
+    } else {
+        echo "Login Not Successful";
+    }
+    
 
-<!-- <!DOCTYPE html>
+    }
+
+?>
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <form method="get">
-    <input type="text" name="username">
-    <button type="submit">Submit</button>
+    <h1> Login </h1>
+
+    <form action="" method="post">
+        <label for="Username/Email">Username/Email</label>
+        <input type="text" name="Username" id="Username"> <br>
+
+        <label for="Password">Password</label>
+        <input type="text" name="Password" id="Password">
+
+        <button>Submit</button>
     </form>
+
 </body>
-</html> -->
+</html>
