@@ -37,6 +37,8 @@ if($issubmitted){
 
 </head>
 <body>
+
+    <h1>Register</h1>
     
     <form method="post" name="FormReg">
         <input type="text" name="name" id="name" placeholder="name">
@@ -44,6 +46,8 @@ if($issubmitted){
         <input type="email" name="email" id="email" placeholder="email">
         <input type="password" name="password" id="password" placeholder="password">
         <button>submit</button>
+        <span>Don't have an account <a href="index.php">Login</a></span>
+        
     </form>
     <script src="js/validate.js"></script>
 </body>

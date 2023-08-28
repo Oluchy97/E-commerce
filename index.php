@@ -3,9 +3,6 @@ if(isset($_POST["Username"])){
     $Username = $_POST["Username"];
     $Password = $_POST["Password"];
 
-    $Username = $_POST["Username"];
-    $Password = $_POST["Password"];
-
     $conn = new mysqli("localhost", "root","", "login");
     if($conn->connect_error){
         exit("Error Connecting to DB");
@@ -46,6 +43,8 @@ if(isset($_POST["Username"])){
         <input type="text" name="Password" id="Password">
 
         <button>Submit</button>
+
+        <span>Don't have an account? <a href="register.php">Register</span>
     </form>
 
 </body>
